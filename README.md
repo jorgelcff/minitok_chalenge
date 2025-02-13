@@ -74,9 +74,9 @@ Obs: Váriaveis de ambiente estão nos assetes caso queira rodar já no banco de
 
 ### Fotos
 
-![Tela Inicial](./TelaInicial.jpg)
-![Tela de Amigos](./TelaAmigos.jpg)
-![Tela de Convites](./TelaConvites.jpg)
+![Tela Inicial](./assets/imgs/TelaInicial.jpg)
+![Tela de Amigos](./assets/imgs/TelaAmigos.jpg)
+![Tela de Convites](./assets/imgs/TelaConvites.jpg)
 
 ### PDF
 
