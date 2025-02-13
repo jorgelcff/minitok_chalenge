@@ -3,24 +3,44 @@ import '../services/friend_service.dart';
 
 class FriendProvider with ChangeNotifier {
   List _friends = [];
+  List _requests = [];
 
   List get friends => _friends;
+  List get requests => _requests;
 
-  Future<void> fetchFriends(String userId) async {
-    _friends = await FriendService.getFriends(userId);
+  Future<void> fetchFriends() async {
+    _friends = await FriendService.getFriends();
     notifyListeners();
   }
 
-  Future<bool> sendFriendRequest(String senderId, String receiverId) async {
-    return await FriendService.sendFriendRequest(senderId, receiverId);
+  Future<void> fetchFriendRequests(String userId) async {
+    final sentRequests = await FriendService.getSentFriendRequests(userId);
+    final receivedRequests =
+        await FriendService.getReceivedFriendRequests(userId);
+    _requests = [...sentRequests, ...receivedRequests];
+    notifyListeners();
+  }
+
+  Future<bool> sendFriendRequest(
+      String senderId, String receiverUserName) async {
+    return await FriendService.sendFriendRequest(senderId, receiverUserName);
   }
 
   Future<bool> acceptFriendRequest(String requestId) async {
-    return await FriendService.acceptFriendRequest(requestId);
+    bool success = await FriendService.acceptFriendRequest(requestId);
+    if (success) {
+      await fetchFriends();
+      await fetchFriendRequests(requestId);
+    }
+    return success;
   }
 
   Future<bool> declineFriendRequest(String requestId) async {
-    return await FriendService.declineFriendRequest(requestId);
+    bool success = await FriendService.declineFriendRequest(requestId);
+    if (success) {
+      await fetchFriendRequests(requestId);
+    }
+    return success;
   }
 
   Future<bool> removeFriend(String friendId, String userId) async {
