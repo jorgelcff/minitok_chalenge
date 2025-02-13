@@ -12,6 +12,11 @@ O Minitok InviteApp é um aplicativo flutter que permite aos usuários gerenciar
 - **Login**: Permite que usuários existentes façam login com seu nome de usuário e senha.
 - **Logout**: Permite que os usuários façam logout de suas contas.
 
+#### Credenciais para teste
+
+- **Usuário**: admin
+- **Senha**: admin
+
 ### Gerenciamento de Convites
 
 - **Enviar Convite**: Permite que os usuários enviem convites para outros usuários usando seus números de telefone.
@@ -53,18 +58,14 @@ Obs: Atividades não feitas devido ao tempo limite.
 
 2. Instale as dependêncis
 
-```
-  	flutter pub get
-```
+`flutter pub get`
 
 3. Rode o projeto
 
-```
-  flutter run
-```
+`flutter run`
 
 4. Escolha a plataforma
 
-```
-  android | web | ios | linux | windows
-```
+`android | web | ios | linux | windows`
+
+Obs: Váriaveis de ambiente estão nos assetes caso queira rodar já no banco de desenvolvimento.
