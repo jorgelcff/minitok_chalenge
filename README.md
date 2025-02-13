@@ -69,3 +69,19 @@ Obs: Atividades não feitas devido ao tempo limite.
 `android | web | ios | linux | windows`
 
 Obs: Váriaveis de ambiente estão nos assetes caso queira rodar já no banco de desenvolvimento.
+
+## Referências
+
+### Fotos
+
+![Tela Inicial](./TelaInicial.jpg)
+![Tela de Amigos](./TelaAmigos.jpg)
+![Tela de Convites](./TelaConvites.jpg)
+
+### PDF
+
+[Documentação Completa](./assets/pdfs/Desafio_Técnico_para_Candidato_a_Engenheiro_de_Software_Flutter.pdf)
+
+### APK
+
+[Baixar APK](./assets/apks/MinitokInviteApp.apk)
