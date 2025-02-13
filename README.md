@@ -2,7 +2,7 @@
 
 ## Descrição
 
-O Minitok InviteApp é um aplicativo que permite aos usuários gerenciar convites e amizades. Ele utiliza o Parse Server para autenticação e armazenamento de dados. Este README fornece uma visão geral das funcionalidades do aplicativo e sugere pontos de melhorias.
+O Minitok InviteApp é um aplicativo flutter que permite aos usuários gerenciar convites e amizades. Ele utiliza o Parse Server junto ao Back4App para autenticação e armazenamento de dados. Este README fornece uma visão geral das funcionalidades do aplicativo e em uma autoreflexão sugere pontos de melhorias.
 
 ## Funcionalidades
 
