@@ -53,7 +53,7 @@ class InviteService {
           response.results != null &&
           response.results!.isNotEmpty) {
         final receiver = response.results!.first as ParseUser;
-        final friendRequest = ParseObject('FriendRequest')
+        final friendRequest = ParseObject('Friend')
           ..set('sender', ParseObject('_User')..objectId = senderId)
           ..set('receiver', receiver)
           ..set('status', 'pending');
