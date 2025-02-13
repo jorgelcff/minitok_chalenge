@@ -53,7 +53,6 @@ class _LoginPageState extends State<LoginPage> {
                   TextFormField(
                     controller: phoneController,
                     decoration: const InputDecoration(labelText: "Username"),
-                    keyboardType: TextInputType.phone,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Por favor, insira username';
