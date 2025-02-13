@@ -74,9 +74,11 @@ Obs: Váriaveis de ambiente estão nos assetes caso queira rodar já no banco de
 
 ### Fotos
 
-![Tela Inicial](./assets/imgs/TelaInicial.jpg)
-![Tela de Amigos](./assets/imgs/TelaAmigos.jpg)
-![Tela de Convites](./assets/imgs/TelaConvites.jpg)
+<div style="display: flex; justify-content: space-around;">
+  <img src="./assets/imgs/TelaInicial.jpg" alt="Tela Inicial" width="30%">
+  <img src="./assets/imgs/TelaAmigos.jpg" alt="Tela de Amigos" width="30%">
+  <img src="./assets/imgs/TelaConvites.jpg" alt="Tela de Convites" width="30%">
+</div>
 
 ### PDF
 
