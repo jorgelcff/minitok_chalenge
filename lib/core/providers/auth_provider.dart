@@ -48,5 +48,12 @@ class AuthProvider extends ChangeNotifier {
   Future<ParseUser?> getCurrentUser() async {
     _user = await _authService.getCurrentUser();
     notifyListeners();
+    return null;
+  }
+
+  Future<Map<String, dynamic>> fetchHomeStats() async {
+    final response = await _authService.fetchHomeStats();
+    notifyListeners();
+    return response;
   }
 }

@@ -33,7 +33,7 @@ class AuthService {
   }
 
   Future<ParseUser?> getCurrentUser() async {
-    final user = await ParseUser.currentUser() as Future<ParseUser?>;
+    final user = await ParseUser.currentUser() as ParseUser?;
     return user;
   }
 
@@ -54,6 +54,17 @@ class AuthService {
     final user = await ParseUser.currentUser() as ParseUser?;
     if (user != null) {
       await user.logout();
+    }
+  }
+
+  Future<Map<String, dynamic>> fetchHomeStats() async {
+    final ParseCloudFunction function = ParseCloudFunction('getHomeStats');
+    final ParseResponse response = await function.execute();
+
+    if (response.success && response.result != null) {
+      return Map<String, dynamic>.from(response.result);
+    } else {
+      throw Exception('Erro ao buscar estatísticas');
     }
   }
 }
