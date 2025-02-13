@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import '../../../core/providers/auth_provider.dart';
 
 class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
+
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
@@ -33,6 +35,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Por favor, insira o número de telefone';
+                  } else if (value.length <= 8) {
+                    return 'O número de telefone deve ter mais de 8 dígitos';
                   }
                   return null;
                 },
@@ -41,7 +45,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 controller: usernameController,
                 decoration: const InputDecoration(labelText: "Nome de Usuário"),
                 validator: (value) {
-                  if (value == null || value.isEmpty) {
+                  if (value == null || value.isEmpty || value.length < 3) {
                     return 'Por favor, insira o nome de usuário';
                   }
                   return null;
@@ -54,6 +58,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Por favor, insira a senha';
+                  } else if (value.length < 6) {
+                    return 'A senha deve ter pelo menos 6 caracteres';
                   }
                   return null;
                 },
@@ -72,6 +78,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
+                            backgroundColor: Colors.amber,
                             content: Text('Erro ao realizar cadastro')),
                       );
                     }
